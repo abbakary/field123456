@@ -57,6 +57,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.humanize",
     "django_apscheduler",
+    "rest_framework",
+    "rest_framework.authtoken",
+    "corsheaders",
     "tracker.apps.TrackerConfig",
 ]
 
