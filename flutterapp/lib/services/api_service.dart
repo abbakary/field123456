@@ -115,13 +115,25 @@ class ApiService {
           'username': username,
           'password': password,
         }),
-      );
+      ).timeout(const Duration(seconds: timeoutDuration), onTimeout: () {
+        throw Exception('Request timeout');
+      });
 
-      return await _handleResponse(response);
+      final result = await _handleResponse(response);
+
+      // If login successful, save the token
+      if (result['success'] && result['data'] is Map) {
+        final data = result['data'] as Map<String, dynamic>;
+        if (data.containsKey('token')) {
+          await setAuthToken(data['token'].toString());
+        }
+      }
+
+      return result;
     } catch (e) {
       return {
         'success': false,
-        'error': 'Network error: $e',
+        'error': 'Network error: ${e.toString()}',
       };
     }
   }
