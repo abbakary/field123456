@@ -199,6 +199,9 @@ class Organization {
       'is_active': isActive,
       'rating': rating,
       'review_count': reviewCount,
+      'total_slots': totalSlots,
+      'remaining_slots': remainingSlots,
+      'training_duration': trainingDuration,
       'created_at': createdAt.toIso8601String(),
       'updated_at': updatedAt.toIso8601String(),
     };
