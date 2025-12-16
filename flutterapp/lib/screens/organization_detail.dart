@@ -183,7 +183,7 @@ class _OrganizationDetailScreenState extends State<OrganizationDetailScreen> {
                         runSpacing: 8,
                         children: org.supportedCourses.map((course) {
                           return Chip(
-                            label: Text(course),
+                            label: Text(course.name),
                             backgroundColor: AppTheme.primaryColor.withOpacity(0.1),
                             labelStyle: const TextStyle(color: AppTheme.primaryColor),
                           );
@@ -209,7 +209,7 @@ class _OrganizationDetailScreenState extends State<OrganizationDetailScreen> {
                         runSpacing: 8,
                         children: org.requiredSkills.map((skill) {
                           return Chip(
-                            label: Text(skill),
+                            label: Text(skill.name),
                             backgroundColor: AppTheme.secondaryColor.withOpacity(0.1),
                             labelStyle: const TextStyle(color: AppTheme.secondaryColor),
                           );
