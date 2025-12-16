@@ -188,8 +188,8 @@ class ApplicationStatusHistoryInline(admin.TabularInline):
     extra = 0
     readonly_fields = ('old_status', 'new_status', 'changed_by', 'changed_at', 'notes')
     can_delete = False
-    
-    def has_add_permission(self, request):
+
+    def has_add_permission(self, request, obj=None):
         return False
 
 
