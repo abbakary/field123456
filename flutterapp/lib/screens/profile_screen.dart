@@ -145,7 +145,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       runSpacing: 8,
                       children: student.skills.map((skill) {
                         return Chip(
-                          label: Text(skill),
+                          label: Text(skill.name),
                           backgroundColor:
                               AppTheme.primaryColor.withOpacity(0.1),
                           labelStyle: const TextStyle(
